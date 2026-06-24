@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom"
-import { themes } from "../data/themes"
+import { useNavigate } from "react-router-dom";
+import { themes } from "../data/themes";
 
 export default function ThemeSelect() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div
@@ -26,8 +26,9 @@ export default function ThemeSelect() {
           fontSize: "clamp(24px, 4vw, 40px)",
         }}
       >
-        Choose Your Booth Theme
+        Photobooth EXPO SMP Prima Cendekia Islami x LHProduction
       </h1>
+      <h2>Pilih tema booth yang anda inginkan!</h2>
 
       {/* THEMES GRID */}
       <div
@@ -39,7 +40,7 @@ export default function ThemeSelect() {
           maxWidth: 1100,
         }}
       >
-        {themes.map(theme => (
+        {themes.map((theme) => (
           <div
             key={theme.id}
             onClick={() => navigate(`/booth/${theme.id}/stickers`)}
@@ -54,20 +55,15 @@ export default function ThemeSelect() {
               overflow: "hidden",
               transition: "transform 0.2s ease",
             }}
-            onMouseEnter={e =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseLeave={e =>
-              (e.currentTarget.style.transform = "scale(1)")
-            }
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
             {/* SOFT OVERLAY — NO backdrop-filter */}
             <div
               style={{
                 position: "absolute",
                 inset: 0,
-                background:
-                  "linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35))",
+                background: "linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35))",
               }}
             />
 
@@ -92,5 +88,5 @@ export default function ThemeSelect() {
         ))}
       </div>
     </div>
-  )
+  );
 }
